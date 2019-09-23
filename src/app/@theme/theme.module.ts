@@ -4,7 +4,6 @@ import {
   NbActionsModule,
   NbLayoutModule,
   NbMenuModule,
-  NbSearchModule,
   NbSidebarModule,
   NbUserModule,
   NbContextMenuModule,
@@ -20,7 +19,6 @@ import {
   FooterComponent,
   HeaderComponent,
   LayoutDirectionSwitcherComponent,
-  SearchInputComponent,
   SwitcherComponent,
 } from './components';
 import {
@@ -45,7 +43,6 @@ const NB_MODULES = [
   NbMenuModule,
   NbUserModule,
   NbActionsModule,
-  NbSearchModule,
   NbSidebarModule,
   NbContextMenuModule,
   NbSecurityModule,
@@ -59,7 +56,6 @@ const COMPONENTS = [
   LayoutDirectionSwitcherComponent,
   HeaderComponent,
   FooterComponent,
-  SearchInputComponent,
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
