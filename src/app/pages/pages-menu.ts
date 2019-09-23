@@ -18,7 +18,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Login',
         link: '/auth/login',
-      }
+      },
     ],
   },
 ];

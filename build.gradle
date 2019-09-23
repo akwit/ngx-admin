@@ -1,0 +1,50 @@
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+
+  dependencies {
+    classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+  }
+}
+
+apply plugin: 'war'
+apply plugin: 'com.moowork.node'
+
+node {
+  // Set the work directory where node_modules should be located
+  nodeModulesDir = file("${project.projectDir}")
+
+  // If true, it will download node using above parameters.
+  // If false, it will try to use globally installed node.
+
+  version = '10.4.1'
+  npmVersion = '6.1.0'
+}
+
+task buildProd(type: NpmTask) {
+  // install the express package only
+  args = ['run', 'build:prod']
+}
+
+task copyDist(type: Copy) {
+  from 'dist'
+  into '../BackendAdmin/src/main/webapp'
+}
+
+task cleanTempDir(type: Delete) {
+  delete fileTree(dir: '../BackendAdmin/src/main/webapp/', exclude: 'WEB-INF/')
+}
+
+// processes your package.json before running gulp build
+war.dependsOn 'copyDist'
+copyDist.dependsOn 'cleanTempDir'
+cleanTempDir.dependsOn 'buildProd'
+buildProd.dependsOn 'npmInstall'
+
+dependencies {
+  compile project(path: ':BackendCommon')
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
