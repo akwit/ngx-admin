@@ -4,7 +4,6 @@ import {
   NbActionsModule,
   NbLayoutModule,
   NbMenuModule,
-  NbSearchModule,
   NbSidebarModule,
   NbUserModule,
   NbContextMenuModule,
@@ -14,13 +13,11 @@ import {
   NbThemeModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbSecurityModule } from '@nebular/security';
 
 import {
   FooterComponent,
   HeaderComponent,
   LayoutDirectionSwitcherComponent,
-  SearchInputComponent,
   SwitcherComponent,
 } from './components';
 import {
@@ -45,10 +42,8 @@ const NB_MODULES = [
   NbMenuModule,
   NbUserModule,
   NbActionsModule,
-  NbSearchModule,
   NbSidebarModule,
   NbContextMenuModule,
-  NbSecurityModule,
   NbButtonModule,
   NbSelectModule,
   NbIconModule,
@@ -59,7 +54,6 @@ const COMPONENTS = [
   LayoutDirectionSwitcherComponent,
   HeaderComponent,
   FooterComponent,
-  SearchInputComponent,
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
